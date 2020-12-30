@@ -1,0 +1,36 @@
+scan:
+  warnOn:
+    - notFound
+  failOn:
+    - notFound
+    - parseFailed
+    - never
+  includes:
+    - ${maven:project.basedir}/.git
+    - ${env:HOME_DIR}/.git-config
+    - ${file:fileList.yml}
+    - ${maven:project.basedir}/target
+    - /root/a
+    - !/root/a/0
+    - /root/b
+    - /other/directoy/
+    - /other/bla/**/*.ext
+    - !/other/bla/**/*.ext~
+    - !**/*.bak
+    - c:/users/dirkmahler
+    - http://nexus/my-repo/com/foo/artifact/1.0.0/artifact-1.0.0.jar
+    - maven:repository::http://nexus/my-repo
+    - rdbms:connection::jdbc:oracle:oci:@TEST
+    - java:classpath::${maven:project.basedir}/target/my-classes
+    - target/assembly
+    - !target/assembly/notwanted
+    - target:
+      - "/assembly/*.xml"
+      - "/assembly/!*.dat"
+    - target/assembly/*.xml
+    - !target/assembly/*.dat
+  properties:
+    - file.exclude: # <-- weg?
+  continueOnError: false
+  reset: false
+
