@@ -29,6 +29,7 @@ scan:
       - "/assembly/!*.dat"
     - target/assembly/*.xml
     - !target/assembly/*.dat
+    - !target/classes #exclude default classes dir from maven project scanner plugin
   properties:
     - file.exclude: # <-- weg?
   continueOnError: false

@@ -1,0 +1,2 @@
+store:
+  uri: file://${maven}

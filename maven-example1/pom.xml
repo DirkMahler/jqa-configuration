@@ -9,6 +9,7 @@
 
     <build>
         <plugins>
+            <!-- Could/Should be moved to a Maven extension -->
             <plugin>
             <groupId>com.buschmais.jqassistant</groupId>
             <artifactId>jqassistant-maven-plugin</artifactId>

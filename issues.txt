@@ -2,10 +2,14 @@ Open Issues
 - Löschen von geerbten Konfigurations-Knoten in spezifischen Sub-Modul-Konfigs
 - ProjectScope anhand Existenz von .jqassistant/rules (configuration hat keinen Einfluss darauf)
 - Ausgabe der effektiven Config
-    - optional per Maven-/CLI-Parameter(?)
+    - optional per Maven-/CLI-Parameter
 - Wie können wir unterscheiden, wo das Scan-Root (Wurzelknoten) für folgendes Beispiel liegt:
     - target/assembly/*.xml
     - !target/assembly/*.dat
     - target:
       - "/assembly/*.xml"
       - "/assembly/!*.dat"
+- Plugins
+    - Aktivierung/Deaktivierung
+    - Provisionierung/Classloader
+    - Pojos für Plugin-Properties
