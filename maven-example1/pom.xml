@@ -11,18 +11,21 @@
         <plugins>
             <!-- Could/Should be moved to a Maven extension -->
             <plugin>
-            <groupId>com.buschmais.jqassistant</groupId>
-            <artifactId>jqassistant-maven-plugin</artifactId>
-            <version>1.9.0</version>
-            <executions>
-                <execution>
-                    <id>default</id>
-                    <goals>
-                        <goal>scan</goal>
-                        <goal>analyze</goal>
-                    </goals>
-                </execution>
-            </executions>
+                <groupId>com.buschmais.jqassistant</groupId>
+                <artifactId>jqassistant-maven-plugin</artifactId>
+                <version>1.9.0</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>scan</goal>
+                            <goal>analyze</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+
+                </configuration>
             </plugin>
         </plugins>
     </build>

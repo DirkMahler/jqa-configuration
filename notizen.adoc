@@ -1,0 +1,10 @@
+= 27.01.2021
+
+* Auffinden von Plugins
+** über Classpath (`META-INF/jqassistant-plugin.xml`)
+** zusätzlich über Angabe von Koordinaten Config, aufgelöst über konfiguriertes Maven-Repository (settings.xml)
+* Aktivierung/Deaktivierung von Plugins
+** Scenario: Migration YAML -> YAML2-Plugin
+** id für Plugin-Artefakt (z.B. `java`)
+** auf der Ebene eines Plugin-Artefakts (z.B. `java`), nicht einzelne Scanner/Reports/etc.
+

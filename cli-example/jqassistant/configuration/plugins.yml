@@ -1,0 +1,2 @@
+plugins:
+  - org.jqassistant.contrib.plugins:jqassistant-hcl-plugin:1.9.0

@@ -1,0 +1,5 @@
+analyze:
+  parameters:
+    rootPackage: "com.foo.bar"
+  failOn: CRITICAL
+  warnOn: MINOR

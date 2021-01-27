@@ -1,0 +1,2 @@
+plugins:
+  - org.jqassistant.contrib.plugins:jqassistant-m2repo-plugin:1.9.0

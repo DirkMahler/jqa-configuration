@@ -30,13 +30,15 @@ scan:
     - target/assembly/*.xml
     - !target/assembly/*.dat
     - !target/classes #exclude default classes dir from maven project scanner plugin
-  continueOnError: false
-  reset: false
   properties:
     - file.exclude: # <-- weg?
-    - m2repo.artifacts.scan: true
-  plugins:
-    java:
-      scanner:
-        bytecode:
-          dependsOnWeight: enabled
+    - file.include: # <-- weg?
+  plugin:
+    m2repo:
+      enabled: true
+      configuration:
+        artifacts:
+          scan: tru
+  continueOnError: false
+  reset: false
+

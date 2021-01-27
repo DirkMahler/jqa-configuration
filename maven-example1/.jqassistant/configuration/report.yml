@@ -1,0 +1,6 @@
+report:
+  plugins:
+    m2repo:
+      enabled: true
+      configuration:
+        renderGraph:
