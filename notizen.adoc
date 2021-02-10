@@ -1,10 +1,22 @@
 = 27.01.2021
 
 * Auffinden von Plugins
-** über Classpath (`META-INF/jqassistant-plugin.xml`)
+** über Classpath (`META-INF/jqassistant-plugin.xml`, existierender Mechanismus)
 ** zusätzlich über Angabe von Koordinaten Config, aufgelöst über konfiguriertes Maven-Repository (settings.xml)
-* Aktivierung/Deaktivierung von Plugins
-** Scenario: Migration YAML -> YAML2-Plugin
-** id für Plugin-Artefakt (z.B. `java`)
-** auf der Ebene eines Plugin-Artefakts (z.B. `java`), nicht einzelne Scanner/Reports/etc.
+** CLI: Verwendung entsprechender Maven-Bibliotheken, inkl. Einlesen einer ggf. vorhandenen ~/.m2/settings.xml (für Mirrors/Proxy & Authentifizierungs-Konfig)
+** Maven: Nutzung vorhandener Mechanismen für Auflösung/Download der Artefakte
+** Vorerst keine Isolation von Plugins über Classloader (Problem: Abhängigkeiten zwischen Plugins)
 
+* Aktivierung/Deaktivierung von Plugins
+** Szenarien
+*** Migration YAML -> YAML2-Plugin
+*** Explizite Analyse eines Teilaspektes (z.B. nur Scan XML, daher Deaktivierung von Java, Maven etc.)
+** id für Plugin-Artefakt (z.B. `java`) in jqassistant-plugin.xml, muss eindeutig sein -> Fehler bei Nichteindeutigkeit mit Angabe der entsprechenden Plugin-Artefakte (JARs)
+** id auf der Ebene eines Plugin-Artefakts (z.B. `java`), nicht einzelne Scanner/Reports/etc.
+** Aktivierung/Deaktivierung beim Laden der XML-Deskriptoren (PluginConfigurationReader)
+** Fragen
+*** Welche Plugins sind per Default aktiviert?
+*** Wie spielen Defaults zusammen mit expliziter (De-)Aktivierung zusammen?
+** Default-Plugins-Deskriptor wird mit CLI/Maven-Distri ausgeliefert
+*** enthält Default Aktivierungen/Deaktivierung
+*** Kann durch Nutzer-spezifische YAML-Datei überschrieben werden

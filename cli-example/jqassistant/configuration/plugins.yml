@@ -1,2 +1,30 @@
 plugins:
-  - org.jqassistant.contrib.plugins:jqassistant-hcl-plugin:1.9.0
+  artifacts:
+    - org.jqassistant.contrib.plugins:jqassistant-hcl-plugin:1.9.0
+    - org.jqassistant.contrib.plugins:jqassistant-docker-plugin:1.9.0
+  activation:
+    java: true
+    yaml: true
+    yaml2: false
+    hcl: true
+
+----
+def activationList = plugins.activations
+for each definedArtifacts in plugins.artifacts
+  def pluginId = definedArtifact.pluginId
+
+  if pluginId not in activationList
+    die with error
+
+  def activation = activationList 'pluginId'
+
+  if !activation
+    continue
+
+  loadPlugin(definedArtifact)
+  pop activationList
+
+if not empty activationList
+  for each requiredPlugin in (activationList(action=true))
+    print errormessage and die
+
