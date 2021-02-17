@@ -20,3 +20,12 @@
 ** Default-Plugins-Deskriptor wird mit CLI/Maven-Distri ausgeliefert
 *** enthält Default Aktivierungen/Deaktivierung
 *** Kann durch Nutzer-spezifische YAML-Datei überschrieben werden
+
+* Roadmap
+** 1.10
+*** ids für Plugins
+** 1.11
+*** YAML-Konfiguration für Store-Koordinaten (uri/username/password), CLI & Maven
+** 1.1x
+*** Plugin-Provisionierung
+**** CLI/Maven -> Laden von Plugins via Maven-Repositories

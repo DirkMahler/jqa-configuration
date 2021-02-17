@@ -3,3 +3,5 @@ analyze:
     rootPackage: "com.foo.bar"
   failOn: CRITICAL
   warnOn: MINOR
+  rules:
+    directory: ${maven:session.executionRoot}/adr

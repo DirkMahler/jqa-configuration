@@ -1,4 +1,4 @@
 store:
-  uri: file://${maven}
-  username:
-  password:
+  uri: bolt://neo4j:7687
+  username: ${env:NEO4J_USERNAME}
+  password: ${env:NEO4J_PASSWORD}
